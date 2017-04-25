@@ -1,0 +1,55 @@
+@-webkit-keyframes input-shadow {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 1px 1px 1px 1px red;
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+@keyframes input-shadow {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 1px 1px 1px 1px red;
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+.circle-red {
+    -webkit-animation:input-shadow ease-in-out 1s infinite;
+    animation:input-shadow ease-in-out 1s infinite;
+}
+
+@-webkit-keyframes input-shadow2 {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 1px 1px 1px 1px green;
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+@keyframes input-shadow2 {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 1px 1px 1px 1px green;
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+.circle-green {
+    -webkit-animation:input-shadow2 ease-in-out 1s infinite;
+    animation:input-shadow2 ease-in-out 1s infinite;
+}

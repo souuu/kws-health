@@ -1,0 +1,40 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" [@cardtable1]>
+                    <div class="header">
+                        <h4 class="title">L'historique du patient {{patient_toshow.fName}} {{patient_toshow.lName}}</h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Blood Pressure</th>
+                                <th>Heart Rate</th>
+                                <th>Respiratory Rate</th>
+                                <th>Oxygene</th>
+                                <th>Temperature</th>
+                                <th>Malade</th>
+                            </tr>
+                            <tbody>
+                            <tr *ngFor="let stat of patient_toshow.stats">
+                                <td>{{stat.time.substring(0,10)}} {{stat.time.substring(11,19)}}</td>
+                                <td>{{stat.bp}}</td>
+                                <td>{{stat.hr}}</td>
+                                <td>{{stat.rr}}</td>
+                                <td>{{stat.spo2}}</td>
+                                <td>{{stat.temp}}</td>
+                                <td><b style="color: red ;" *ngIf="stat.prediction==0">Oui</b>
+                                    <b style="color: green ;" *ngIf="stat.prediction==1">Non</b></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

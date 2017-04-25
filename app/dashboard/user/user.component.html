@@ -1,0 +1,57 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let patient of patients_toshow">
+                <div class="card card-user" [@cardprofile]>
+                    <div class="image ">
+                        <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            <a (click)="goToUser(patient.patientId)" style="cursor: pointer;">
+                                <img class="avatar border-gray circle-red" *ngIf="patient.stats.prediction==0" src="assets/img/faces/face-3.jpg" alt="..."/>
+                                <img class="avatar border-gray circle-green" *ngIf="patient.stats.prediction==1" src="assets/img/faces/face-3.jpg" alt="..."/>
+                                <h4 class="title">{{patient.fName}}<br />
+                                    <small  >{{patient.lName}}</small>
+                                </h4>
+                            </a>
+                        </div>
+                        <p class="description text-center"> {{patient.dob.substring(0,10)}}
+                        </p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="stats-user">
+                                    <li>
+                                        Blood Pressure : {{patient.stats.bp}}
+                                    </li>
+                                    <li>
+                                        Heart Rate : {{patient.stats.hr}}
+                                    </li>
+                                    <li>
+                                        Respiratory Rate : {{patient.stats.rr}}
+                                    </li>
+                                    <li>
+                                        Oxygene : {{patient.stats.spo2}}
+                                    </li>
+                                    <li>
+                                        Temperature : {{patient.stats.temp}}
+                                    </li>
+                                    <li>
+                                        Malade : <b style="color: red ;" *ngIf="patient.stats.prediction==0">Oui</b>
+                                        <b style="color: green ;" *ngIf="patient.stats.prediction==1">Non</b>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr>
+                        <span class="text-center">
+                            {{patient.stats.time.substring(0,10)}}  {{patient.stats.time.substring(11,19)}}
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
